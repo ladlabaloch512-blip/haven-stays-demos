@@ -152,6 +152,102 @@ html.js .stats.in .stat-ic{animation:pop .55s ease both}
 .social-row{display:flex;gap:12px}.social-row a{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);padding:11px 16px;text-decoration:none;font-weight:800;min-height:48px;background:var(--card);color:var(--ink)}
 .social-row .ic{color:var(--primary)}
 .wa-float .ic{stroke:#fff;margin-right:6px}
+/* ===== v4: maximum animation layer ===== */
+.btn{position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.22)}
+.btn:active{transform:translateY(0) scale(.97)}
+.btn>span{position:relative;z-index:1}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:rip .55s ease-out forwards;pointer-events:none;z-index:0}
+.btn.alt .ripple{background:rgba(0,0,0,.16)}
+.filters button .ripple{background:rgba(127,127,127,.35)}
+@keyframes rip{to{transform:scale(2.6);opacity:0}}
+.filters button{position:relative;overflow:hidden;transition:transform .25s,background .25s,color .25s,border-color .25s}
+.filters button:hover{transform:translateY(-2px)}
+.filters button.active{animation:chipPop .32s}
+@keyframes chipPop{0%{transform:scale(.92)}60%{transform:scale(1.07)}100%{transform:scale(1)}}
+.nav-links>a:not(.btn){position:relative}
+.nav-links>a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-5px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav-links>a:not(.btn):hover::after{transform:scaleX(1)}
+.brand-name{transition:letter-spacing .35s}
+header.site:hover .brand-name{letter-spacing:3px}
+.prop-card{position:relative}
+.prop-card::before{content:"";position:absolute;top:0;left:0;height:4px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s;z-index:4}
+.prop-card:hover::before{transform:scaleX(1)}
+.prop-card.enter{animation:cardIn .45s both}
+@keyframes cardIn{from{opacity:.3;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
+.view-btn{position:relative;transition:color .25s}
+.view-btn::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.view-btn:hover{color:var(--accent)}
+.view-btn:hover::after{transform:scaleX(1)}
+.heart{transition:transform .2s}
+.heart:active{transform:scale(.85)}
+.heart.pop svg{animation:heartPop .45s}
+@keyframes heartPop{0%{transform:scale(1)}35%{transform:scale(1.5) rotate(-10deg)}70%{transform:scale(.88)}100%{transform:scale(1)}}
+.heart.pop::after{content:"";position:absolute;inset:-5px;border:2px solid #B00020;border-radius:50%;animation:ringOut .45s forwards;pointer-events:none}
+@keyframes ringOut{from{transform:scale(.55);opacity:.9}to{transform:scale(1.55);opacity:0}}
+.saved-count{display:inline-block}
+.saved-count.bump{animation:bump .4s}
+@keyframes bump{30%{transform:scale(1.55)}}
+.wa-float{animation:waPulse 2.6s ease-out infinite}
+@keyframes waPulse{0%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,0)}}
+.wa-float:hover{animation-play-state:paused;transform:scale(1.05)}
+#toTop{transform:scale(.5) rotate(-120deg);opacity:0;pointer-events:none;transition:transform .35s,opacity .35s}
+#toTop.show{transform:none;opacity:1;pointer-events:auto}
+.acc .acc-body{display:block;max-height:0;overflow:hidden;transition:max-height .45s ease,padding .45s ease;padding-top:0;padding-bottom:0}
+.acc.open .acc-body{max-height:340px;padding-top:2px;padding-bottom:16px}
+.acc>button{position:relative;padding-right:46px;transition:background .3s}
+.acc>button:hover{background:var(--soft)}
+.acc>button::after{content:"";position:absolute;right:19px;top:50%;width:9px;height:9px;border-right:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);transform:translateY(-70%) rotate(45deg);transition:transform .35s}
+.acc.open>button::after{transform:translateY(-30%) rotate(225deg)}
+.ticks li:nth-child(2) svg path{transition-delay:.12s}.ticks li:nth-child(3) svg path{transition-delay:.24s}.ticks li:nth-child(4) svg path{transition-delay:.36s}.ticks li:nth-child(5) svg path{transition-delay:.48s}.ticks li:nth-child(6) svg path{transition-delay:.6s}
+form input,form select,form textarea{transition:border-color .25s,box-shadow .25s}
+form input:focus,form select:focus,form textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(120,120,120,.25);outline:none}
+.bkbar{position:relative}
+.bkbar::after{content:"";position:absolute;top:0;height:100%;width:16px;background:rgba(255,255,255,.45);animation:travel 2.2s linear infinite}
+@keyframes travel{from{left:-16px}to{left:100%}}
+.pbar{position:relative}
+.pbar::after{content:"";position:absolute;top:0;height:100%;width:16px;background:rgba(255,255,255,.4);animation:travel 1.4s linear infinite}
+.success.show svg{animation:okPop .55s}
+@keyframes okPop{0%{transform:scale(.55)}60%{transform:scale(1.14)}100%{transform:scale(1)}}
+@keyframes toastIn{0%{transform:translate(-50%,16px) scale(.92);opacity:0}60%{transform:translate(-50%,-3px) scale(1.02);opacity:1}100%{transform:translate(-50%,0) scale(1)}}
+.gitem img{transition:transform .55s}
+.gitem:hover img{transform:scale(1.07)}
+.gitem p{transition:transform .3s,color .3s}
+.gitem:hover p{color:var(--accent);transform:translateX(4px)}
+.thumbs img{transition:transform .25s}
+.thumbs img:hover{transform:scale(1.06)}
+.car-btn{transition:transform .25s}
+.car-btn:hover{transform:scale(1.18)}
+.car-dots i{transition:width .3s,background .3s}
+.car-dots i.on{width:18px}
+.drawer a{transition:background .25s,transform .25s}
+.drawer a:hover{background:var(--soft);transform:translateX(4px)}
+.ftr a{transition:color .25s}
+.ftr a:hover{color:var(--accent)}
+@media (hover:hover) and (pointer:fine){.marquee:hover .marquee-track{animation-play-state:paused}}
+.div-wave svg{width:104%;margin-left:-2%;animation:waveDrift 9s ease-in-out infinite alternate}
+@keyframes waveDrift{from{transform:translateX(0)}to{transform:translateX(-16px)}}
+.sticky-book{animation:barIn .55s .35s both}
+@keyframes barIn{from{transform:translateY(105%)}to{transform:none}}
+#lightbox img{animation:lbIn .35s}
+@keyframes lbIn{from{transform:scale(.92);opacity:.35}to{transform:scale(1);opacity:1}}
+.lb-close{transition:transform .3s}
+.lb-close:hover{transform:rotate(90deg)}
+.ev-ic svg{transition:transform .4s}
+.ev-row:hover .ev-ic svg{transform:rotate(-8deg) scale(1.14)}
+.stats>div{transition:transform .3s,background .3s}
+.stats>div:hover{transform:translateY(-4px);background:var(--soft)}
+.tile img{transition:transform .55s}
+.tile:hover img{transform:scale(1.09)}
+.tile span{transition:background .3s,color .3s}
+.tile:hover span{background:var(--accent);color:#fff}
+.kicker::before{content:"";display:inline-block;width:26px;height:2px;background:var(--accent);vertical-align:middle;margin-right:9px;transition:width .4s}
+section:hover .kicker::before{width:46px}
+#progress::after{content:"";position:absolute;right:0;top:0;width:9px;height:100%;background:#fff;opacity:.65}
+.social-row a{transition:transform .25s,background .25s,color .25s}
+.social-row a:hover{transform:translateY(-3px)}
+@media(min-width:761px){#searchInput{transition:width .35s}#searchInput:focus{width:300px}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 :root{--radius:30px;--btnr:24px}.hero-media img{border-radius:38px} .prop-card,.ev-card,.tile{border-radius:var(--radius)} .prop-img img{border-radius:var(--radius) var(--radius) 0 0} .btn{border-radius:var(--btnr)} input,select,textarea{border-radius:16px} .gitem img{border-radius:var(--radius)} .bookbar{border-radius:30px}
 h1,h2,h3{font-family:var(--hfont)}
@@ -193,11 +289,17 @@ const PREFIX = "courtyard";
 let saved = [];
 try{ saved = JSON.parse(localStorage.getItem('hs-saved')||'[]'); }catch(e){ saved = []; }
 function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2400); }
-function updSavedCount(){ document.querySelectorAll('.saved-count').forEach(e=>e.textContent=saved.length); }
+function updSavedCount(){ document.querySelectorAll('.saved-count').forEach(e=>{ e.textContent=saved.length; e.classList.remove('bump'); void e.offsetWidth; e.classList.add('bump'); }); }
+const FINE_POINTER = window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+function attachTilt(scope){ if(!FINE_POINTER || !scope) return; scope.querySelectorAll('.prop-card').forEach(card=>{ if(card.dataset.tilt) return; card.dataset.tilt='1';
+  card.addEventListener('mousemove', e=>{ const r=card.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; card.style.transform='perspective(850px) rotateX('+(-y*6).toFixed(2)+'deg) rotateY('+(x*8).toFixed(2)+'deg) translateY(-5px)'; });
+  card.addEventListener('mouseleave', ()=>{ card.style.transform=''; }); }); }
+document.addEventListener('click', e=>{ const b=e.target.closest('.btn, .filters button'); if(!b) return; const r=b.getBoundingClientRect(); const s=document.createElement('span'); s.className='ripple'; const d=Math.max(r.width,r.height)*1.1; s.style.width=s.style.height=d+'px'; s.style.left=(e.clientX-r.left-d/2)+'px'; s.style.top=(e.clientY-r.top-d/2)+'px'; b.appendChild(s); setTimeout(()=>s.remove(),600); });
 const AMEN_ICON = {"Fully Furnished":"i-sofa","Kitchen":"i-kitchen","WiFi":"i-wifi","Parking":"i-car","AC":"i-ac","Laundry":"i-laundry","Garden":"i-leaf","BBQ Area":"i-flame","Large Lawn":"i-tree","Pool":"i-pool","Bonfire":"i-flame","Power Backup":"i-bolt","Generator":"i-bolt","Kids Play":"i-smile","Event Deck":"i-umb","Orchard Lawn":"i-tree"};
 function iconUse(n){ return '<svg class="ic" aria-hidden="true"><use href="#'+n+'"/></svg>'; }
 function toggleSave(id, btn){
   const i = saved.indexOf(id);
+  btn.classList.remove('pop'); void btn.offsetWidth; btn.classList.add('pop');
   if(i>=0){ saved.splice(i,1); btn.classList.remove('saved'); toast('Removed from saved list'); }
   else{ saved.push(id); btn.classList.add('saved'); toast('Property saved. We will keep it in your list.'); }
   try{ localStorage.setItem('hs-saved', JSON.stringify(saved)); }catch(e){}
@@ -256,6 +358,8 @@ function applyFilter(){
   if(curSort==='guests') list.sort((a,b)=>b.guests-a.guests);
   if(curSort==='beds') list.sort((a,b)=>b.bedn-a.bedn);
   c.innerHTML = list.length ? list.map(p=>cardHTML(p)).join('') : '<p>No property matches your search. Try another keyword or filter.</p>';
+  c.querySelectorAll('.prop-card').forEach((card,i)=>{ card.classList.add('enter'); card.style.animationDelay=(i*55)+'ms'; });
+  attachTilt(c);
   observeReveals(); startSlides();
 }
 function openLB(src){ const lb=document.getElementById('lightbox'); document.getElementById('lbImg').src=src; lb.classList.add('open'); }
@@ -297,7 +401,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   if(pl){ let seen=false; try{ seen = sessionStorage.getItem('hs-pl-seen')==='1'; }catch(e){}
     if(seen){ pl.style.display='none'; }
     else{ pl.classList.add('on'); try{ sessionStorage.setItem('hs-pl-seen','1'); }catch(e){} setTimeout(()=>{ pl.classList.remove('on'); pl.style.display='none'; }, 650); } }
-  updSavedCount(); applyFilter(); observeReveals(); initCounters();
+  updSavedCount(); applyFilter(); observeReveals(); initCounters(); attachTilt(document);
   const s = document.getElementById('searchInput'); if(s) s.addEventListener('input', ()=>{ curQuery=s.value.toLowerCase(); applyFilter(); });
   const so = document.getElementById('sortSel'); if(so) so.addEventListener('change', ()=>{ curSort=so.value; applyFilter(); });
   document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click', ()=>{ curFilter=b.dataset.filter; document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active')); b.classList.add('active'); applyFilter(); }));
