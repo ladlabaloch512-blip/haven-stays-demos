@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><title>Courtyard Boutique - Book - Courtyard Boutique - PLACEHOLDER BRAND: HAVEN STAYS</title>
+<!-- PLACEHOLDER BRAND: HAVEN STAYS. Swap brand in ONE place: BRAND_NAME in the script. Prices: Rs -- placeholders, confirm on inquiry. Phone 0300-0000000 placeholder. Areas TBC. -->
+<script>document.documentElement.classList.add('js');</script>
+<style>:root{--bg:#FDF8EE;--ink:#122033;--primary:#0F2A44;--accent:#B9975B;--soft:#EFE6D2;--card:#FFFFFF;--hfont:Georgia,'Times New Roman',serif;--pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2256%22%20height%3D%2256%22%3E%3Cpath%20d%3D%22M0%2056%20L56%200%22%20stroke%3D%22%235A6B3A%22%20stroke-opacity%3D%220.13%22%20stroke-width%3D%222%22/%3E%3C/svg%3E")}
+
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6}
+img{max-width:100%;display:block}a{color:inherit}button{cursor:pointer;font-family:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+#progress{position:fixed;top:0;left:0;height:4px;background:var(--accent);width:0;z-index:200}
+#preloader{display:none}#preloader.on{display:flex;position:fixed;inset:0;background:var(--bg);z-index:300;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+#preloader .plogo{font-size:28px;font-weight:900;letter-spacing:.1em;animation:pulse 1s ease-in-out infinite alternate}
+@keyframes pulse{from{opacity:.45}to{opacity:1}}
+#preloader .pbar{width:160px;height:4px;background:var(--soft);overflow:hidden}#preloader .pbar i{display:block;height:100%;width:40%;background:var(--primary);animation:load 1s linear infinite}
+@keyframes load{from{transform:translateX(-100%)}to{transform:translateX(400%)}}
+.switcher{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 20px;background:#181818;color:#fff}
+.switcher span{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.sw-btn{border:2px solid #fff;background:transparent;color:#fff;padding:8px 12px;font-size:13px;font-weight:700;min-height:44px}
+.sw-btn.active{background:#fff;color:#111}
+header.site{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:2px solid var(--ink);transition:padding .25s}
+header.site .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1200px;margin:0 auto;gap:14px;transition:padding .25s}
+header.site.scrolled{box-shadow:0 6px 22px rgba(0,0,0,.14)}header.site.scrolled .nav{padding-top:8px;padding-bottom:8px}
+.logo{font-weight:900;letter-spacing:.07em;font-size:21px;white-space:nowrap;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center}.nav-links a{text-decoration:none;font-weight:700;font-size:15px;position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent);transition:width .3s}
+.nav-links a:hover::after,.nav-links a.cur::after{width:100%}
+.hamburger{display:none;background:var(--primary);color:#fff;border:none;padding:12px 16px;font-size:16px;font-weight:800;min-height:48px;min-width:52px}
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.25s;z-index:90}.backdrop.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;width:min(320px,86vw);height:100%;background:var(--bg);color:var(--ink);z-index:100;transform:translateX(105%);transition:transform .32s;padding:24px;box-shadow:-8px 0 30px rgba(0,0,0,.25);overflow:auto}
+.drawer.open{transform:none}.drawer a{display:block;padding:14px 0;border-bottom:1px solid rgba(120,120,120,.4);text-decoration:none;font-weight:700;font-size:18px;opacity:0;transform:translateX(14px)}
+.drawer.open a{animation:stg .4s forwards}.drawer.open a:nth-child(3){animation-delay:.05s}.drawer.open a:nth-child(4){animation-delay:.1s}.drawer.open a:nth-child(5){animation-delay:.15s}.drawer.open a:nth-child(6){animation-delay:.2s}.drawer.open a:nth-child(7){animation-delay:.25s}.drawer.open a:nth-child(8){animation-delay:.3s}
+@keyframes stg{to{opacity:1;transform:none}}
+.marquee{background:var(--primary);color:#fff;overflow:hidden;padding:10px 0}
+.mq-track{display:flex;gap:48px;white-space:nowrap;width:max-content;animation:mq 26s linear infinite;font-weight:800;letter-spacing:.06em}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(hover:hover) and (pointer:fine){.marquee:hover .mq-track{animation-play-state:paused}}
+.btn{display:inline-block;background:var(--primary);color:#fff;padding:15px 24px;text-decoration:none;font-weight:800;border:none;font-size:16px;position:relative;overflow:hidden;min-height:52px}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn:active,.prop-card:active,.tile:active{transform:scale(.98)}
+@media(hover:hover){.btn::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-101%);transition:transform .35s}.btn:hover::before{transform:none}.btn span{position:relative;z-index:1}}
+.hero{padding:44px 0 8px}.hero h1{font-size:54px;line-height:1.04;margin:10px 0;font-family:var(--hfont)}
+.kicker{letter-spacing:.18em;font-weight:800;color:var(--accent);font-size:13px;text-transform:uppercase}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}
+.hero-media{overflow:hidden}.hero-media img{width:100%;aspect-ratio:4/3;object-fit:cover;animation:ken 16s ease-in-out infinite alternate}
+@keyframes ken{from{transform:scale(1)}to{transform:scale(1.09)}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--primary);border-bottom:1px solid rgba(120,120,120,.5);margin:28px 0}
+.stats div{padding:18px 14px;border-right:1px solid rgba(120,120,120,.4)}.stats b{font-size:32px;display:block;line-height:1.1}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prop-card{background:var(--card);border:1px solid rgba(120,120,120,.45);overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;color:var(--ink)}
+@media(hover:hover){.prop-card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(0,0,0,.16)}.prop-card:hover .prop-img img{transform:scale(1.07)}}
+.prop-img{position:relative;overflow:hidden}.prop-img img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,10,10,.72);color:#fff;border:none;width:40px;height:40px;font-size:18px;z-index:2}
+.car-btn.prev{left:8px}.car-btn.next{right:8px}.car-dots{position:absolute;bottom:8px;left:0;right:0;text-align:center;z-index:2}
+.car-dots i{display:inline-block;width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.55);margin:0 3px}.car-dots i.on{background:#fff}
+.heart{position:absolute;top:10px;right:10px;z-index:3;background:#fff;border:none;width:42px;height:42px;font-size:19px;color:#B00020;line-height:1}
+.heart.saved{background:#B00020;color:#fff;animation:pop .35s}
+@keyframes pop{40%{transform:scale(1.25)}}
+.prop-body{padding:18px}.prop-tag{color:var(--accent);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.prop-card h3{font-size:22px;margin:6px 0}.meta{font-size:14px;opacity:.85}.amen{font-size:14px}
+.price{font-weight:900;font-size:18px}.price-note{display:block;font-size:12px;font-weight:400;opacity:.75}
+.view-btn{font-weight:800;text-decoration:underline}
+.tile{background:var(--card);border:1px solid rgba(120,120,120,.45);overflow:hidden;text-decoration:none;display:block;transition:transform .3s}
+@media(hover:hover){.tile:hover{transform:translateY(-6px)}.tile:hover img{transform:scale(1.06)}}
+.tile img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .5s}.tile .tpad{padding:18px}
+.ev-card{background:var(--card);border:1px solid rgba(120,120,120,.45);padding:22px;color:var(--ink)}
+.band{background:var(--primary);color:#fff;padding:52px 0}.band h2{color:#fff}
+.softband{background:var(--soft);padding:52px 0}
+.divider{display:block;width:100%;height:70px;color:var(--soft);margin-bottom:-4px}
+.divider2{color:var(--primary)}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+.step{border-top:4px solid var(--accent);padding-top:14px}.step b{font-size:26px}
+.acc{border:1px solid rgba(120,120,120,.5);margin:10px 0;background:var(--card);color:var(--ink)}
+.acc button{width:100%;text-align:left;background:none;border:none;padding:16px;font-size:16px;font-weight:800;min-height:52px}
+.acc .acc-body{max-height:0;overflow:hidden;transition:max-height .35s;padding:0 16px}.acc.open .acc-body{padding-bottom:16px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.filters button{padding:12px 18px;border:2px solid var(--ink);background:var(--card);color:var(--ink);font-weight:700;min-height:48px}
+.filters button.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.filters button:active{transform:scale(.96)}
+.search,select.sortsel{width:100%;padding:14px;border:2px solid var(--ink);font-size:16px;margin:8px 0;background:var(--card);color:var(--ink)}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 16px}.rail .prop-card{min-width:300px;scroll-snap-align:start}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gitem{cursor:pointer;overflow:hidden}.gitem img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s}
+@media(hover:hover){.gitem:hover img{transform:scale(1.07)}}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:150;display:none;align-items:center;justify-content:center;padding:16px}
+.lightbox.open{display:flex}.lightbox img{max-width:min(920px,94vw);max-height:84vh;animation:zoom .3s}
+@keyframes zoom{from{transform:scale(.92);opacity:.4}to{transform:scale(1);opacity:1}}
+.lb-x{position:absolute;top:16px;right:16px;background:#fff;border:none;padding:12px 16px;font-weight:800;min-height:48px}
+.thumbs{display:flex;gap:10px;margin-top:10px}.thumbs img{width:96px;height:72px;object-fit:cover;cursor:pointer;border:3px solid transparent}.thumbs img.on{border-color:var(--accent)}
+form.book{display:grid;gap:12px}form.book label{font-weight:700;font-size:14px}
+form.book input,form.book select,form.book textarea{width:100%;padding:13px;border:2px solid #999;font-size:16px;margin-top:4px;background:#fff;color:#111}
+.submit{background:var(--primary);color:#fff;border:none;padding:16px;font-size:17px;font-weight:800;width:100%;min-height:54px}
+.success{display:none;background:#EAF6EC;color:#123;border:2px solid #1A7A2E;padding:22px;text-align:center}.success.show{display:block}
+.check{width:64px;height:64px;margin:0 auto 10px}.check path{stroke-dasharray:60;stroke-dashoffset:60;animation:draw 0.7s 0.2s forwards}.check circle{stroke-dasharray:160;stroke-dashoffset:160;animation:draw 0.7s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+#toast{position:fixed;left:50%;bottom:86px;transform:translate(-50%,20px);background:#111;color:#fff;padding:13px 20px;font-weight:700;opacity:0;pointer-events:none;transition:.3s;z-index:180;max-width:92vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:70;background:#1FA855;color:#fff;text-decoration:none;padding:14px 18px;font-weight:800;box-shadow:0 8px 24px rgba(0,0,0,.25);min-height:52px}
+#toTop{position:fixed;left:16px;bottom:16px;z-index:70;background:var(--ink);color:var(--bg);border:none;padding:13px 16px;font-weight:900;opacity:0;pointer-events:none;transition:.3s;min-height:48px}
+#toTop.show{opacity:1;pointer-events:auto}
+.sticky-book{display:none}
+footer{background:#181818;color:#fff;padding:38px 20px}footer a{color:#fff}
+.tick{list-style:none;padding:0}.tick li{padding:7px 0 7px 34px;position:relative}
+.tick li svg{position:absolute;left:0;top:8px;width:22px;height:22px}
+.tick li svg path{stroke:var(--accent);stroke-width:3;fill:none;stroke-dasharray:30;stroke-dashoffset:0}
+html.js .rv{opacity:0;transform:translateY(18px)}html.js .rv.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+html.js .rv.in .tick li svg path{animation:draw .6s forwards}
+.pin{animation:pindrop 1s ease both}@keyframes pindrop{0%{transform:translateY(-30px);opacity:0}60%{transform:translateY(4px);opacity:1}100%{transform:none;opacity:1}}
+.plan rect{fill:var(--soft);stroke:var(--ink);stroke-width:2;transition:fill .25s}.plan rect.hl{fill:var(--accent)}
+.plan text{font-size:13px;font-weight:700;fill:var(--ink)}
+.room-list{display:flex;gap:8px;flex-wrap:wrap}.room-list button{padding:11px 15px;border:2px solid var(--ink);background:var(--card);color:var(--ink);font-weight:700;min-height:46px}
+.pattern-band{background-image:var(--pattern);background-size:56px 56px;padding:44px 0}
+@media(max-width:760px){
+ .nav-links{display:none}.hamburger{display:block}
+ .hero h1{font-size:37px}.hero-grid{grid-template-columns:1fr}.hero-media img{aspect-ratio:4/3}
+ .grid3{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr}
+ .gallery-grid{grid-template-columns:1fr 1fr}body{font-size:15px}
+ .sticky-book{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:65;background:var(--primary);color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom));justify-content:space-between;align-items:center;font-weight:800}
+ .sticky-book a{background:#fff;color:#111;padding:11px 18px;text-decoration:none;min-height:46px}
+ .wa-float{bottom:76px}#toTop{bottom:76px}
+}
+
+:root{--radius:30px;--btnr:24px}.hero-media img{border-radius:38px} .prop-card,.ev-card,.tile{border-radius:var(--radius)} .prop-img img{border-radius:var(--radius) var(--radius) 0 0} .btn{border-radius:var(--btnr)} input,select,textarea{border-radius:16px} .gitem img{border-radius:var(--radius)} .bookbar{border-radius:30px}
+h1,h2,h3{font-family:var(--hfont)}
+</style></head><body>
+<div id="progress"></div><div id="preloader"><div class="plogo brand-name">HAVEN STAYS</div><div class="pbar"><i></i></div><div style="font-size:13px;letter-spacing:.14em">LOADING YOUR STAY</div></div>
+<div class="switcher"><span>Colour:</span><button class="sw-btn active" onclick="setVars('--primary:#0F2A44;--bg:#FDF8EE;--ink:#122033;--soft:#EFE6D2;--accent:#B9975B',this)">1 Navy Sand</button><button class="sw-btn" onclick="setVars('--primary:#14532D;--bg:#F7FBF2;--ink:#142614;--soft:#E2EDD6;--accent:#8A6D00',this)">2 Emerald</button><button class="sw-btn" onclick="setVars('--primary:#5B1220;--bg:#FDF4F0;--ink:#2A1014;--soft:#F0DAD2;--accent:#14532D',this)">3 Burgundy</button><button class="sw-btn" onclick="setVars('--primary:#0E4A4A;--bg:#F0FAF8;--ink:#0E2222;--soft:#D6ECE8;--accent:#B85C1A',this)">4 Teal</button></div>
+<header class="site"><div class="nav"><a class="logo brand-name" href="courtyard-home.html">HAVEN STAYS</a>
+<nav class="nav-links"><a href="courtyard-home.html" class="">Home</a><a href="courtyard-stays.html" class="">Stays</a><a href="courtyard-events.html" class="">Events</a><a href="courtyard-gallery.html" class="">Gallery</a><a href="courtyard-about.html" class="">About</a><a href="courtyard-book.html" class="btn" style="padding:11px 18px;min-height:46px"><span>Book</span></a><span title="Saved properties" style="font-weight:800;color:#B00020">&#9829; <span class="saved-count">0</span></span></nav>
+<button id="hamburger" class="hamburger" aria-label="Open menu">Menu</button></div></header>
+<nav id="drawer" class="drawer"><button class="close-drawer" style="float:right;padding:10px 14px;min-height:44px">Close</button><h3 class="brand-name">HAVEN STAYS</h3><a href="courtyard-home.html">Home</a><a href="courtyard-stays.html">Stays</a><a href="courtyard-events.html">Events</a><a href="courtyard-gallery.html">Gallery</a><a href="courtyard-about.html">About</a><a href="courtyard-book.html">Book Now</a></nav><div id="backdrop" class="backdrop"></div>
+<main class="wrap"><section id="book" style="padding:40px 0"><div class="kicker">Booking &amp; Contact</div><h1 style="font-size:44px;font-family:var(--hfont)">Book Your Stay or Event</h1>
+<div class="hero-grid" style="align-items:start"><div><div id="bookSuccess" class="success"><svg class="check" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="none" stroke="#1A7A2E" stroke-width="3"/><path fill="none" stroke="#1A7A2E" stroke-width="4" d="M14 27l8 8 16-16"/></svg><h3>Inquiry Received</h3><p>Your demo inquiry number is <strong id="successId"></strong>. We will contact you on WhatsApp to confirm availability and price.</p></div>
+<form class="book" id="bookForm">
+<label>Your Name<input required name="name" type="text" placeholder="Full name"></label>
+<label>Phone / WhatsApp<input required name="phone" type="tel" placeholder="03xx-xxxxxxx"></label>
+<label>Property / Event<select id="bkProperty" name="property"><option>The Ivy Residence</option><option>Palm Court Villa</option><option>The Stone House</option><option>Green Acres Farm</option><option>Orchard Farm Retreat</option><option>Lakeside Farm Estate</option><option>Entertainment Event (Venue Only)</option></select></label>
+<label>Check-in / Event Date<input required type="date" name="date"></label>
+<label>Guests<input required type="number" min="1" value="4" name="guests"></label>
+<label>Message<textarea name="msg" rows="3" placeholder="Tell us about your stay or event"></textarea></label>
+<button class="submit" type="submit">Send Inquiry</button></form></div>
+<div><div class="ev-card"><h3>Contact Directly</h3><p><strong class="brand-name">HAVEN STAYS</strong> (placeholder brand)<br>City / Area: To be confirmed<br>Phone / WhatsApp: 0300-0000000 (placeholder)<br>Email: stay@example.com (placeholder)</p>
+<p><a class="btn" href="https://wa.me/923000000000" target="_blank"><span>Chat on WhatsApp</span></a></p><p><a class="btn alt" href="tel:03000000000"><span>Call Now</span></a></p></div>
+<div class="ev-card" style="margin-top:18px"><h3>Find Us</h3>
+<svg viewBox="0 0 320 200" style="width:100%;background:var(--soft)" role="img" aria-label="Placeholder map">
+<path d="M0 60 H320 M0 130 H320 M80 0 V200 M180 0 V200 M260 0 V200" stroke="#999" stroke-width="6"/>
+<circle cx="180" cy="95" r="30" fill="none" stroke="var(--accent)" stroke-width="3"/>
+<g class="pin"><path d="M180 55 c-14 0-22 10-22 20 0 14 22 34 22 34 s22-20 22-34 c0-10-8-20-22-20z" fill="var(--primary)"/><circle cx="180" cy="76" r="7" fill="#fff"/></g>
+<text x="120" y="185" font-size="12" font-weight="700">Area To Be Confirmed</text></svg>
+<p style="font-size:14px">Exact location is shared on WhatsApp after inquiry. This map is a placeholder.</p></div></div></div></section>
+<section style="padding-bottom:48px"><h2 style="font-size:30px">Before You Book</h2><div><div class="acc rv"><button type="button">How do I book a house or farm house?</button><div class="acc-body"><p>Send the booking form or message on WhatsApp with your dates and guest count. We confirm availability and the final price on WhatsApp before anything is final.</p></div></div><div class="acc rv"><button type="button">Are the prices shown final?</button><div class="acc-body"><p>Prices are shown as Rs -- on this demo because final rates depend on dates, guests and the property. Your confirmed price is always shared in writing before booking.</p></div></div></div></section></main><footer><div class="wrap"><strong class="brand-name">HAVEN STAYS</strong> - Furnished Houses | Farm Houses | Entertainment Events
+<p style="opacity:.85;font-size:14px;max-width:640px">Placeholder demo for design approval only. Brand name, photos, prices, phone and areas are placeholders and will be replaced with the real business details after approval.</p>
+<p><a href="courtyard-stays.html">Stays</a> &nbsp;|&nbsp; <a href="courtyard-events.html">Events</a> &nbsp;|&nbsp; <a href="courtyard-gallery.html">Gallery</a> &nbsp;|&nbsp; <a href="courtyard-about.html">About</a> &nbsp;|&nbsp; <a href="courtyard-book.html">Book</a></p></div></footer>
+<a class="wa-float" href="https://wa.me/923000000000?text=Assalam-o-Alaikum%2C%20I%20want%20booking%20details" target="_blank">WhatsApp Us</a>
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">Top</button>
+<div id="toast" role="status"></div>
+<div class="lightbox" id="lightbox"><button class="lb-x" onclick="closeLB()">Close X</button><img id="lbImg" alt="Gallery photo large view"></div>
+<script>const IMG = {}; const PROPS = [];
+
+const BRAND_NAME = "HAVEN STAYS"; /* PLACEHOLDER BRAND - change this one line per file set to swap */
+document.querySelectorAll('.brand-name').forEach(e=>{e.textContent=BRAND_NAME});
+const PREFIX = "courtyard";
+let saved = [];
+try{ saved = JSON.parse(localStorage.getItem('hs-saved')||'[]'); }catch(e){ saved = []; }
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2400); }
+function updSavedCount(){ document.querySelectorAll('.saved-count').forEach(e=>e.textContent=saved.length); }
+function toggleSave(id, btn){
+  const i = saved.indexOf(id);
+  if(i>=0){ saved.splice(i,1); btn.classList.remove('saved'); btn.innerHTML='&#9825;'; toast('Removed from saved list'); }
+  else{ saved.push(id); btn.classList.add('saved'); btn.innerHTML='&#9829;'; toast('Property saved. We will keep it in your list.'); }
+  try{ localStorage.setItem('hs-saved', JSON.stringify(saved)); }catch(e){}
+  updSavedCount();
+}
+function setVars(str, btn){
+  str.split(';').forEach(pair=>{ const kv=pair.split(':'); if(kv.length===2) document.documentElement.style.setProperty(kv[0].trim(), kv[1].trim()); });
+  document.querySelectorAll('.sw-btn').forEach(b=>b.classList.remove('active')); if(btn) btn.classList.add('active');
+  try{ localStorage.setItem('hs-theme-'+PREFIX, str); }catch(e){}
+}
+function carMove(btn, dir){
+  const box = btn.closest('.prop-img'); const imgs = JSON.parse(box.dataset.gal);
+  let cur = +(box.dataset.cur||0); cur = (cur + dir + imgs.length) % imgs.length; box.dataset.cur = cur;
+  box.querySelector('img.main').src = IMG[imgs[cur]];
+  box.querySelectorAll('.car-dots i').forEach((d,j)=>d.classList.toggle('on', j===cur));
+  event.stopPropagation();
+}
+function cardHTML(p, style){
+  const isSaved = saved.includes(p.id) ? ' saved' : '';
+  const heart = saved.includes(p.id) ? '&#9829;' : '&#9825;';
+  return `<article class="prop-card" data-id="${p.id}" data-type="${p.type}" data-guests="${p.guests}" data-beds="${p.bedn}" data-name="${p.name.toLowerCase()}">
+   <div class="prop-img" data-gal='${JSON.stringify(p.gal)}' data-cur="0">
+     <img class="main" src="${IMG[p.img]}" alt="${p.name}">
+     <button class="car-btn prev" onclick="carMove(this,-1)" aria-label="Previous photo">&#8249;</button>
+     <button class="car-btn next" onclick="carMove(this,1)" aria-label="Next photo">&#8250;</button>
+     <div class="car-dots">${p.gal.map((g,j)=>`<i class="${j===0?'on':''}"></i>`).join('')}</div>
+     <button class="heart${isSaved}" onclick="event.stopPropagation();toggleSave(${p.id},this)" aria-label="Save property">${heart}</button>
+   </div>
+   <div class="prop-body"><div class="prop-tag">${p.label}</div><h3>${p.name}</h3>
+   <p class="meta">${p.cap} &nbsp;|&nbsp; ${p.beds} &nbsp;|&nbsp; ${p.area}</p>
+   <p class="amen">${p.amen.slice(0,4).join(' · ')}</p>
+   <div><span class="price">Rs -- / night</span><span class="price-note">Confirm on inquiry</span><a class="view-btn" href="${PREFIX}-property.html?id=${p.id}">View Details</a></div></div></article>`;
+}
+let curFilter='all', curQuery='', curSort='feat';
+function applyFilter(){
+  const c = document.getElementById('propGrid'); if(!c) return;
+  let list = PROPS.filter(p=>(curFilter==='all'||p.type===curFilter) && (p.name+' '+p.label+' '+p.amen.join(' ')).toLowerCase().includes(curQuery));
+  if(curSort==='guests') list.sort((a,b)=>b.guests-a.guests);
+  if(curSort==='beds') list.sort((a,b)=>b.bedn-a.bedn);
+  c.innerHTML = list.length ? list.map(p=>cardHTML(p)).join('') : '<p>No property matches your search. Try another keyword or filter.</p>';
+  observeReveals();
+}
+function openLB(src){ const lb=document.getElementById('lightbox'); document.getElementById('lbImg').src=src; lb.classList.add('open'); }
+function closeLB(){ document.getElementById('lightbox').classList.remove('open'); }
+function observeReveals(){
+  const els = document.querySelectorAll('.rv:not(.in)');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(es=>{ es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} }); },{threshold:.08});
+    els.forEach(e=>io.observe(e));
+  } else { els.forEach(e=>e.classList.add('in')); }
+  setTimeout(()=>document.querySelectorAll('.rv').forEach(e=>e.classList.add('in')), 1600);
+}
+function initCounters(){
+  const nums = document.querySelectorAll('[data-count]');
+  function run(el){ const target=+el.dataset.count; let n=0; const step=Math.max(1,Math.ceil(target/40)); const iv=setInterval(()=>{ n+=step; if(n>=target){n=target;clearInterval(iv);} el.textContent=n; },30); }
+  if('IntersectionObserver' in window){ const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){run(en.target);io.unobserve(en.target);}})},{threshold:.3}); nums.forEach(e=>io.observe(e)); }
+  else nums.forEach(e=>e.textContent=e.dataset.count);
+}
+function fillDetail(){
+  const main = document.getElementById('dMain'); if(!main) return;
+  const id = +(new URLSearchParams(location.search).get('id')||1);
+  const p = PROPS.find(x=>x.id===id) || PROPS[0];
+  main.src = IMG[p.img]; main.alt = p.name;
+  document.getElementById('dName').textContent = p.name;
+  document.getElementById('dTag').textContent = p.label;
+  document.getElementById('dMeta').textContent = p.cap+' | '+p.beds+' | '+p.area;
+  document.getElementById('dDesc').textContent = p.desc;
+  document.getElementById('dAmen').innerHTML = p.amen.map(a=>'<li>'+a+'</li>').join('');
+  document.getElementById('dThumbs').innerHTML = p.gal.map((g,j)=>`<img src="${IMG[g]}" class="${j===0?'on':''}" onclick="dSwap(this,'${g}')" alt="Photo ${j+1}">`).join('');
+  const rel = document.getElementById('relGrid'); if(rel) rel.innerHTML = PROPS.filter(x=>x.id!==p.id).slice(0,3).map(x=>cardHTML(x)).join('');
+  const sel = document.getElementById('bkProperty'); if(sel) sel.value = p.name;
+  const sb = document.getElementById('stickyName'); if(sb) sb.textContent = p.name;
+}
+function dSwap(el, key){ document.getElementById('dMain').src = IMG[key]; document.querySelectorAll('#dThumbs img').forEach(i=>i.classList.remove('on')); el.classList.add('on'); }
+document.addEventListener('DOMContentLoaded', ()=>{
+  /* restore theme */
+  try{ const s=localStorage.getItem('hs-theme-'+PREFIX); if(s) s.split(';').forEach(pair=>{const kv=pair.split(':'); if(kv.length===2) document.documentElement.style.setProperty(kv[0].trim(),kv[1].trim());}); }catch(e){}
+  const pl = document.getElementById('preloader');
+  if(pl){ let seen=false; try{ seen = sessionStorage.getItem('hs-pl-seen')==='1'; }catch(e){}
+    if(seen){ pl.style.display='none'; }
+    else{ pl.classList.add('on'); try{ sessionStorage.setItem('hs-pl-seen','1'); }catch(e){} setTimeout(()=>{ pl.classList.remove('on'); pl.style.display='none'; }, 650); } }
+  updSavedCount(); applyFilter(); fillDetail(); observeReveals(); initCounters();
+  const s = document.getElementById('searchInput'); if(s) s.addEventListener('input', ()=>{ curQuery=s.value.toLowerCase(); applyFilter(); });
+  const so = document.getElementById('sortSel'); if(so) so.addEventListener('change', ()=>{ curSort=so.value; applyFilter(); });
+  document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click', ()=>{ curFilter=b.dataset.filter; document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active')); b.classList.add('active'); applyFilter(); }));
+  document.querySelectorAll('[data-gfilter]').forEach(b=>b.addEventListener('click', ()=>{ document.querySelectorAll('[data-gfilter]').forEach(x=>x.classList.remove('active')); b.classList.add('active'); const f=b.dataset.gfilter; document.querySelectorAll('.gitem').forEach(g=>{ g.style.display = (f==='all'||g.dataset.cat===f)?'':'none'; }); }));
+  document.querySelectorAll('.acc > button').forEach(btn=>btn.addEventListener('click', ()=>{ const acc=btn.parentElement; const body=acc.querySelector('.acc-body'); const open=acc.classList.toggle('open'); body.style.maxHeight = open ? body.scrollHeight+'px' : '0px'; }));
+  document.querySelectorAll('.room-list button').forEach(b=>b.addEventListener('click', ()=>{ document.querySelectorAll('.plan rect').forEach(r=>r.classList.remove('hl')); const r=document.getElementById('room-'+b.dataset.room); if(r) r.classList.add('hl'); }));
+  const ham=document.getElementById('hamburger'), drawer=document.getElementById('drawer'), back=document.getElementById('backdrop');
+  function openD(){ drawer.classList.add('open'); back.classList.add('show'); } function closeD(){ drawer.classList.remove('open'); back.classList.remove('show'); }
+  if(ham) ham.addEventListener('click', openD); if(back) back.addEventListener('click', closeD);
+  document.querySelectorAll('.drawer a, .close-drawer').forEach(a=>a.addEventListener('click', closeD));
+  const form=document.getElementById('bookForm');
+  if(form) form.addEventListener('submit', e=>{ e.preventDefault(); const id='HS-2026-'+Math.floor(1000+Math.random()*9000); document.getElementById('successId').textContent=id; document.getElementById('bookSuccess').classList.add('show'); form.style.display='none'; toast('Inquiry sent. Number '+id); window.scrollTo({top:document.getElementById('book').offsetTop-80, behavior:'smooth'}); });
+  const checkForm=document.getElementById('checkBar');
+  if(checkForm) checkForm.addEventListener('submit', e=>{ e.preventDefault(); location.href = PREFIX+'-stays.html'; });
+});
+window.addEventListener('scroll', ()=>{
+  const h=document.documentElement; const pct = h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('progress').style.width = pct+'%';
+  document.querySelector('header.site').classList.toggle('scrolled', h.scrollTop>30);
+  const tt=document.getElementById('toTop'); if(tt) tt.classList.toggle('show', h.scrollTop>600);
+},{passive:true});
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ const lb=document.getElementById('lightbox'); if(lb) lb.classList.remove('open'); } });
+</script></body></html>
